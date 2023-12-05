@@ -56,7 +56,6 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg">
       <style>
         {`
-          /* Gaya CSS Anda disini */
           .nav-title{
             color: #F5F5F5;
             font-size: 24px;
