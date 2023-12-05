@@ -7,7 +7,12 @@ dotenv.config();
 const port = 5000;
 const app = express();
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: 'https://brainpy-test-fe.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}))
 
 const API_KEY = process.env.API_KEY;
 
