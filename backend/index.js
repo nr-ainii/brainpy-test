@@ -33,10 +33,11 @@ app.post("/completions", async (req, res) => {
       messages: [
         {
           role: "user",
-          content: "Buat 2 judul skripsi dan deskripsi produk yang spesifik, unik inovatif dan mudah untuk dibuat berdasarkan kata kunci berikut.(gunakan '/n' pada akhir judul dan deskripsi)" + keywords,
+          content: "Buat 1 judul skripsi dan deskripsi produk yang spesifik, unik inovatif dan mudah untuk dibuat berdasarkan kata kunci berikut.(gunakan '/n' pada akhir judul dan deskripsi)" + keywords,
         },
       ],
-      max_tokens: 3000,
+      // max_tokens: 3000,
+      max_tokens: 10,
     }),
   };
   try {
