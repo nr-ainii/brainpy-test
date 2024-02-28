@@ -46,23 +46,16 @@ const SiClueless = () => {
       selectedKeywords: { ...prevFormData.selectedKeywords, [name]: value },
     }));
   };
-
-  const validateSelection = () => {
-    // Loop through leftCategories and rightCategories to check if at least one keyword is selected from each category
-    for (const category of [...leftCategories, ...rightCategories]) {
-      if (!formData.selectedKeywords[category.name]) {
-        return false;
-      }
-    }
-    return true;
-  };
+  
 
   const getResult = async (e) => {
     e.preventDefault();
-    if (!validateSelection()) {
-      alert("Harap pilih setidaknya satu kata kunci dari setiap kategori sebelum melanjutkan.");
+    
+    if (Object.keys(formData.selectedKeywords).length === 0) {
+      alert("Harap pilih setidaknya satu kata kunci sebelum melanjutkan.");
       return;
     }
+
     setLoading(true); // Atur loading menjadi true saat permintaan dikirim
 
     const options = {
